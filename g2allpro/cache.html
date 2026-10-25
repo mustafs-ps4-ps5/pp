@@ -1,0 +1,51 @@
+<html manifest="Cache.manifest">
+<head>
+<meta charset="utf-8">
+<title>Mustafa PS4 Host - Installing Cache</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:linear-gradient(135deg,#0a0e1a 0%,#1a1f35 50%,#0d1326 100%);background-attachment:fixed;min-height:100vh;color:#fff;text-align:center;font-family:'Tajawal',sans-serif;overflow:hidden}
+body{display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.container{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:30px;padding:40px 50px;max-width:700px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.8),0 0 40px rgba(0,100,255,0.05)}
+header{margin-bottom:20px}
+.main-title{font-family:'Orbitron',sans-serif;font-size:42px;font-weight:900;text-shadow:0 0 30px rgba(0,100,255,0.2);letter-spacing:2px;margin-bottom:5px}
+[dir="rtl"] .main-title{letter-spacing:0}
+.highlight{background:linear-gradient(135deg,#ff6b35,#ff2e63);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ps4-text{background:linear-gradient(135deg,#0066ff,#00ccff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ps5-text{background:linear-gradient(135deg,#ff0066,#ff33cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{font-size:14px;font-weight:700;color:#8899bb;letter-spacing:8px;text-transform:uppercase;margin-top:-5px}
+[dir="rtl"] .subtitle{letter-spacing:4px}
+.version-badge{display:inline-block;background:linear-gradient(135deg,#ff6b35,#ff2e63);color:#fff;font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;padding:3px 15px;border-radius:20px;margin-top:10px;letter-spacing:1px;box-shadow:0 4px 15px rgba(255,46,99,0.3)}
+.separator{border:none;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);margin:20px 0}
+.status-bar{margin:25px 0 30px;padding:15px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.05)}
+.status-text{font-family:'Orbitron',sans-serif;font-size:14px;color:#8899bb;letter-spacing:1px}
+.status-text.error{color:#ff2e63}
+@media(max-width:600px){.container{padding:25px 20px;border-radius:20px}.main-title{font-size:28px}.subtitle{font-size:11px;letter-spacing:5px}.status-text{font-size:12px}[dir="rtl"] .subtitle{letter-spacing:3px}}
+@media(max-width:400px){.main-title{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1 class="main-title"><span class="highlight">Mustafa</span> <span class="ps4-text">PS4</span> <span class="ps5-text">Host</span></h1>
+<div class="subtitle" id="cacheTitle">Installing Cache</div>
+<div class="version-badge">FW 5.05 · 7.XX - 13.52</div>
+</header>
+<hr class="separator">
+<div class="status-bar"><span id="progress" class="status-text">Installing Cache...</span></div>
+</div>
+<script>
+var cacheTranslations={ar:{title:'جاري تثبيت الكاش',installing:'جاري تثبيت الكاش: ',percent:'%',success:'تم تثبيت الكاش بنجاح',reopen:'أعد فتح الصفحة...'},en:{title:'Installing Cache',installing:'Installing Cache: ',percent:'%',success:'Cache Installed Successfully',reopen:'Reopen the Page...'}};
+var cacheLang='ar';try{var savedLang=localStorage.getItem('preferredLang');if(savedLang&&cacheTranslations[savedLang])cacheLang=savedLang;}catch(e){}
+var ct=cacheTranslations[cacheLang];document.getElementById('cacheTitle').textContent=ct.title;document.documentElement.dir=cacheLang==='ar'?'rtl':'ltr';document.documentElement.lang=cacheLang;
+history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
+function DLProgress(e){var Percent=(Math.round(e.loaded/e.total*100));setTimeout(function(){window.progress.innerHTML=ct.installing+Percent+ct.percent;},500);}
+function DisplayCacheProgress(){setTimeout(function(){window.progress.innerHTML=ct.success;},1500);setTimeout(function(){window.progress.innerHTML=ct.reopen;},3500);}
+window.applicationCache.addEventListener("progress",DLProgress,false);
+window.applicationCache.oncached=function(e){DisplayCacheProgress();};
+window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+window.applicationCache.onerror=function(e){window.progress.innerHTML="Cache Error - Check manifest files";};
+</script>
+</body>
+</html>

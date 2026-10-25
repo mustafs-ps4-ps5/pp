@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mustafa PS4 Exploit Host</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:linear-gradient(135deg,#0a0e1a 0%,#1a1f35 50%,#0d1326 100%);background-attachment:fixed;min-height:100vh;color:#fff;text-align:center;font-family:'Tajawal',sans-serif}
+body{display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.container{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:30px;padding:40px 50px;max-width:700px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.8),0 0 40px rgba(0,100,255,0.05)}
+.lang-switch{display:flex;justify-content:flex-end;gap:8px;margin-bottom:15px}
+[dir="rtl"] .lang-switch{justify-content:flex-start}
+.lang-btn{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#8899bb;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif}
+.lang-btn.active{background:linear-gradient(135deg,#ff6b35,#ff2e63);border-color:#ff2e63;color:#fff;box-shadow:0 4px 15px rgba(255,46,99,0.3)}
+header{margin-bottom:20px}
+.main-title{font-family:'Orbitron',sans-serif;font-size:42px;font-weight:900;text-shadow:0 0 30px rgba(0,100,255,0.2);letter-spacing:2px;margin-bottom:5px}
+[dir="rtl"] .main-title{letter-spacing:0}
+.highlight{background:linear-gradient(135deg,#ff6b35,#ff2e63);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ps4-text{background:linear-gradient(135deg,#0066ff,#00ccff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ps5-text{background:linear-gradient(135deg,#ff0066,#ff33cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{font-size:14px;font-weight:700;color:#8899bb;letter-spacing:8px;text-transform:uppercase;margin-top:-5px}
+[dir="rtl"] .subtitle{letter-spacing:4px}
+.version-badge{display:inline-block;background:linear-gradient(135deg,#ff6b35,#ff2e63);color:#fff;font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;padding:3px 15px;border-radius:20px;margin-top:10px;letter-spacing:1px;box-shadow:0 4px 15px rgba(255,46,99,0.3)}
+.separator{border:none;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);margin:20px 0}
+.fw-title{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:700;color:#aabbdd;letter-spacing:2px;margin-bottom:5px}
+.fw-range{font-size:14px;color:#7788aa;margin-bottom:25px}
+.range-highlight{background:linear-gradient(135deg,#ff6b35,#ff2e63);padding:2px 12px;border-radius:12px;color:#fff;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,#003263,#004a8f);color:#fff;width:100%;max-width:400px;height:56px;padding:0 25px;font-family:'Orbitron',sans-serif;font-size:16px;font-weight:700;border:none;border-radius:16px;cursor:pointer;letter-spacing:1px;text-transform:uppercase}
+.btn-primary{background:linear-gradient(135deg,#ff2e63,#ff6b35);box-shadow:0 8px 25px rgba(255,46,99,0.3)}
+.btn-primary:hover{background:linear-gradient(135deg,#ff1a4f,#ff5520);box-shadow:0 12px 35px rgba(255,46,99,0.5)}
+.status-bar{margin:25px 0 30px;padding:15px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.05)}
+.status-text{font-family:'Orbitron',sans-serif;font-size:14px;color:#8899bb;letter-spacing:1px}
+.status-text.error{color:#ff2e63}
+footer{margin-top:20px}
+.credit{font-family:'Orbitron',sans-serif;font-size:13px;color:#556688;letter-spacing:2px}
+.credit-link{background:linear-gradient(135deg,#ff6b35,#ff2e63);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;text-decoration:none}
+.thanks{font-size:12px;color:#445566;margin-top:8px;letter-spacing:1px}
+@media(max-width:600px){.container{padding:25px 20px;border-radius:20px}.main-title{font-size:28px}.subtitle{font-size:11px;letter-spacing:5px}.btn{font-size:13px;height:50px;padding:0 15px}.fw-title{font-size:15px}.status-text{font-size:12px}.lang-btn{font-size:10px;padding:4px 10px}[dir="rtl"] .subtitle{letter-spacing:3px}}
+@media(max-width:400px){.main-title{font-size:22px}.btn{font-size:11px;height:44px;gap:8px}.lang-switch{gap:5px}.lang-btn{font-size:9px;padding:3px 8px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="lang-switch">
+<button class="lang-btn active" data-lang="ar" onclick="switchLanguage('ar')">العربية</button>
+<button class="lang-btn" data-lang="en" onclick="switchLanguage('en')">English</button>
+</div>
+<h1 class="main-title"><span class="highlight">Mustafa</span> <span class="ps4-text">PS4</span> <span class="ps5-text">Host</span></h1>
+<div class="subtitle" id="subtitle">Exploit Host</div>
+<div class="version-badge">FW 5.05 · 7.XX - 13.52</div>
+</header>
+<hr class="separator">
+<div id="menu">
+<h2 class="fw-title" id="hostTitle">Mustafa Host</h2>
+<p class="fw-range" id="detectText">Auto Exploit + GoldHen <span class="range-highlight">5.05 &amp; 7.XX - 13.52</span></p>
+<div class="status-bar"><span id="msgs" class="status-text">Ready</span></div>
+<a href="g2allpro/index.html" style="text-decoration:none;"><button class="btn btn-primary" type="button"><span id="enterText">ENTER HOST</span></button></a>
+<footer>
+<p class="credit" id="creditText">Designed by <a href="#" class="credit-link">Mustafa</a></p>
+<p class="thanks" id="thanksText">Special thanks to all scene developers</p>
+</footer>
+</div>
+</div>
+<script>
+var translations={ar:{subtitle:'مشغل الثغرات',hostTitle:'Mustafa Host',detect:'ثغرة تلقائية + GoldHen <span class="range-highlight">5.05 و 7.XX - 13.52</span>',ready:'جاهز',enter:'دخول المضيف',credit:'تصميم <a href="#" class="credit-link">Mustafa</a>',thanks:'شكر خاص لجميع مطوري المشهد',onlyPS:'هذه الصفحة مخصصة لـ PS4 فقط!',detected:'تم اكتشاف الإصدار: ',unsupported:'إصدار غير مدعوم: ',requires:' (المدعوم: 5.05 و 7.00-13.52)'},en:{subtitle:'Exploit Host',hostTitle:'Mustafa Host',detect:'Auto Exploit + GoldHen <span class="range-highlight">5.05 &amp; 7.XX - 13.52</span>',ready:'Ready',enter:'ENTER HOST',credit:'Designed by <a href="#" class="credit-link">Mustafa</a>',thanks:'Special thanks to all scene developers',onlyPS:'This page is for PS4 only!',detected:'Detected PS4 Firmware: ',unsupported:'Unsupported Firmware: ',requires:' (Supported: 5.05 & 7.00-13.52)'}};
+var currentLang='ar';var msgs=document.getElementById('msgs');
+function switchLanguage(lang){currentLang=lang;var t=translations[lang];document.getElementById('subtitle').textContent=t.subtitle;document.getElementById('hostTitle').innerHTML=t.hostTitle;document.getElementById('detectText').innerHTML=t.detect;document.getElementById('enterText').textContent=t.enter;document.getElementById('creditText').innerHTML=t.credit;document.getElementById('thanksText').innerHTML=t.thanks;if(!msgs.classList.contains('error')){msgs.innerHTML=t.ready;}document.querySelectorAll('.lang-btn').forEach(function(btn){btn.classList.remove('active');});document.querySelector('.lang-btn[data-lang="'+lang+'"]').classList.add('active');document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.documentElement.lang=lang;try{localStorage.setItem('preferredLang',lang);}catch(e){}}
+try{var savedLang=localStorage.getItem('preferredLang');if(savedLang&&translations[savedLang])currentLang=savedLang;}catch(e){}
+var uaFull=navigator.userAgent;var match=uaFull.match(/PlayStation 4[ /]([\d.]+)/i);var isPS4=match!==null;var fwVersion=isPS4?match[1]:"Unknown";var fwNum=parseFloat(fwVersion);
+document.addEventListener("DOMContentLoaded",function(){switchLanguage(currentLang);var t=translations[currentLang];if(!isPS4){msgs.innerHTML=t.onlyPS;msgs.className='status-text error';return;}var supported=(Math.abs(fwNum-5.05)<0.001)||(Math.abs(fwNum-5.07)<0.001)||(fwNum>=7.00&&fwNum<=13.52);if(supported){msgs.innerHTML=t.detected+fwVersion;}else{msgs.innerHTML=t.unsupported+fwVersion+t.requires;msgs.className='status-text error';}});
+</script>
+</body>
+</html>

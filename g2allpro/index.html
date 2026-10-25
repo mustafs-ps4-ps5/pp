@@ -1,0 +1,69 @@
+<html manifest="Cache.manifest">
+<head>
+<meta charset="utf-8">
+<title>Mustafa PS4 Host Auto Exploit GoldHen 5.05 &amp; 7.XX - 13.52 FW</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Tajawal:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:linear-gradient(135deg,#0a0e1a 0%,#1a1f35 50%,#0d1326 100%);background-attachment:fixed;min-height:100vh;color:#fff;text-align:center;font-family:'Tajawal',sans-serif;overflow:hidden}
+body{display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.container{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:30px;padding:40px 50px;max-width:700px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.8),0 0 40px rgba(0,100,255,0.05)}
+header{margin-bottom:20px}
+.main-title{font-family:'Orbitron',sans-serif;font-size:42px;font-weight:900;text-shadow:0 0 30px rgba(0,100,255,0.2);letter-spacing:2px;margin-bottom:5px}
+[dir="rtl"] .main-title{letter-spacing:0}
+.highlight{background:linear-gradient(135deg,#ff6b35,#ff2e63);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ps4-text{background:linear-gradient(135deg,#0066ff,#00ccff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ps5-text{background:linear-gradient(135deg,#ff0066,#ff33cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{font-size:14px;font-weight:700;color:#8899bb;letter-spacing:8px;text-transform:uppercase;margin-top:-5px}
+[dir="rtl"] .subtitle{letter-spacing:4px}
+.version-badge{display:inline-block;background:linear-gradient(135deg,#ff6b35,#ff2e63);color:#fff;font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;padding:3px 15px;border-radius:20px;margin-top:10px;letter-spacing:1px;box-shadow:0 4px 15px rgba(255,46,99,0.3)}
+.separator{border:none;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);margin:20px 0}
+.status-bar{margin:25px 0 30px;padding:15px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.05)}
+.status-text{font-family:'Orbitron',sans-serif;font-size:14px;color:#8899bb;letter-spacing:1px}
+.status-text.error{color:#ff2e63}
+footer{margin-top:20px}
+.credit{font-family:'Orbitron',sans-serif;font-size:13px;color:#556688;letter-spacing:2px}
+.credit-link{background:linear-gradient(135deg,#ff6b35,#ff2e63);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;text-decoration:none}
+.thanks{font-size:12px;color:#445566;margin-top:8px;letter-spacing:1px}
+@media(max-width:600px){.container{padding:25px 20px;border-radius:20px}.main-title{font-size:28px}.subtitle{font-size:11px;letter-spacing:5px}.status-text{font-size:12px}[dir="rtl"] .subtitle{letter-spacing:3px}}
+@media(max-width:400px){.main-title{font-size:22px}}
+</style>
+<script>
+if(window.applicationCache&&window.applicationCache.status===0){window.location.replace("cache.html");}
+</script>
+</head>
+<body>
+<div class="container">
+<header>
+<h1 class="main-title"><span class="highlight">Mustafa</span> <span class="ps4-text">PS4</span> <span class="ps5-text">Host</span></h1>
+<div class="subtitle" id="subtitle2">Exploit Host</div>
+<div class="version-badge">FW 5.05 · 7.XX - 13.52</div>
+</header>
+<hr class="separator">
+<div class="status-bar"><span id="progress" class="status-text">Jailbreaking....</span></div>
+<footer>
+<p class="credit" id="credit2">Designed by <a href="#" class="credit-link">Mustafa</a></p>
+<p class="thanks" id="thanks2">Special thanks to all scene developers</p>
+</footer>
+</div>
+<script>
+var translations2={ar:{subtitle:'مشغل الثغرات',loading:'جاري تحميل الثغرة... يرجى الانتظار',detected:'تم اكتشاف الإصدار: ',ps4Only:'فقط PS4 مع الإصدار 5.05 و 7.00 إلى 13.52',contentNotFound:'المحتوى غير موجود! - امسح بيانات المتصفح وأعد تثبيت الكاش',credit:'تصميم <a href="#" class="credit-link">Mustafa</a>',thanks:'شكر خاص لجميع مطوري المشهد'},en:{subtitle:'Exploit Host',loading:'Loading Exploit... Please Wait',detected:'Detected Firmware: ',ps4Only:'Only for PS4 with Firmware 5.05 and 7.00 to 13.52',contentNotFound:'Content not Found! - Clear Browser Data and Re-Install Cache',credit:'Designed by <a href="#" class="credit-link">Mustafa</a>',thanks:'Special thanks to all scene developers'}};
+var currentLang2='ar';try{var savedLang=localStorage.getItem('preferredLang');if(savedLang&&translations2[savedLang])currentLang2=savedLang;}catch(e){}
+var t=translations2[currentLang2];document.getElementById('subtitle2').textContent=t.subtitle;document.getElementById('credit2').innerHTML=t.credit;document.getElementById('thanks2').innerHTML=t.thanks;document.documentElement.dir=currentLang2==='ar'?'rtl':'ltr';document.documentElement.lang=currentLang2;
+var outputConsole=document.getElementById("progress");
+window.log=function(msg,color){if(color===undefined)color="#cccccc";outputConsole.innerHTML='<span style="color:'+color+'">'+msg+'</span><br>';};
+window.logger=function(msg,color){if(color===undefined)color="#cccccc";outputConsole.innerHTML='<span style="color:'+color+'">'+msg+'</span><br>';};
+window.addEventListener('error',function(event){var reason=event.error;var msg='Unhandled error\n';if(reason){msg+=reason+'\n';if(reason.sourceURL)msg+=reason.sourceURL;if(reason.line)msg+=':'+reason.line;if(reason.column)msg+=':'+reason.column;if(reason.stack)msg+='\n'+reason.stack;}else{msg+='No error object';}alert(msg);return true;});
+var uaFull=navigator.userAgent;var match=uaFull.match(/PlayStation 4[ /]([\d.]+)/i);var isPS4=match!==null;var fwVersion=isPS4?match[1]:"Unknown";var fwNum=parseFloat(fwVersion);
+function onScriptError(){progress.innerHTML=t.contentNotFound;}
+if(!isPS4){document.addEventListener("DOMContentLoaded",function(){progress.innerHTML=t.ps4Only;});}else{
+if(fwNum==5.05||fwNum==5.07){var script=document.createElement('script');script.src="exploit5.js";script.onerror=onScriptError;document.head.appendChild(script);}
+else if(fwNum>=7.00&&fwNum<=9.60){var script=document.createElement('script');script.src="exploit7_9.js";script.onerror=onScriptError;document.head.appendChild(script);setTimeout(function(){window.log("Reloading...");try{doJailBreak();}catch(error){window.log("An error occured during exploit: "+error,"red");};},500);}
+else if(fwNum>=10.00&&fwNum<=11.02){var script=document.createElement('script');script.src="exploit10.js";script.onerror=onScriptError;script.onload=function(){setTimeout(function(){doJb();},1000);};document.head.appendChild(script);}
+else if(fwNum>=11.50&&fwNum<=12.02){var script=document.createElement('script');script.src="1150_1202.js";script.onerror=onScriptError;document.head.appendChild(script);}
+else if(fwNum>=12.50&&fwNum<=13.00){var script=document.createElement('script');script.src="1250_13.js";script.onerror=onScriptError;document.head.appendChild(script);}
+else if(fwNum>=13.02&&fwNum<=13.52){var script=document.createElement('script');script.src="1302_1352.js";script.onerror=onScriptError;document.head.appendChild(script);}
+}
+</script>
+</body>
+</html>
