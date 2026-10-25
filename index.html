@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa PS4 Exploit Host</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ar" onclick="switchLanguage('ar')">العربية</button>
+                <button class="lang-btn" data-lang="en" onclick="switchLanguage('en')">English</button>
+            </div>
+            <h1 class="main-title">
+                <span class="highlight">Mustafa</span> 
+                <span class="ps4-text">PS4</span> 
+                <span class="ps5-text">Host</span>
+            </h1>
+            <div class="subtitle" id="subtitle">Exploit Host</div>
+            <div class="version-badge">FW 5.05 · 7.XX - 13.52</div>
+        </header>
+        
+        <hr class="separator">
+
+        <div id="menu">
+            <h2 class="fw-title" id="hostTitle">Mustafa Host</h2>
+            <p class="fw-range" id="detectText">Auto Exploit + GoldHen <span class="range-highlight">5.05 &amp; 7.XX - 13.52</span></p>
+            
+            <div class="status-bar">
+                <span id="msgs" class="status-text">Ready</span>
+            </div>
+
+            <a href="g2allpro/index.html" id="enterBtn" style="text-decoration:none;">
+                <button class="btn btn-primary" type="button">
+                    <span id="enterText">ENTER HOST</span>
+                </button>
+            </a>
+
+            <footer>
+                <p class="credit" id="creditText">Designed by <a href="#" class="credit-link">Mustafa</a></p>
+                <p class="thanks" id="thanksText">Special thanks to all scene developers</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        var translations = {
+            ar: {
+                subtitle: 'مشغل الثغرات',
+                hostTitle: 'Mustafa Host',
+                detect: 'ثغرة تلقائية + GoldHen <span class="range-highlight">5.05 و 7.XX - 13.52</span>',
+                ready: 'جاهز',
+                enter: 'دخول المضيف',
+                credit: 'تصميم <a href="#" class="credit-link">Mustafa</a>',
+                thanks: 'شكر خاص لجميع مطوري المشهد',
+                onlyPS: 'هذه الصفحة مخصصة لـ PS4 فقط!',
+                detected: 'تم اكتشاف الإصدار: ',
+                unsupported: 'إصدار غير مدعوم: ',
+                requires: ' (المدعوم: 5.05 و 7.00-13.52)'
+            },
+            en: {
+                subtitle: 'Exploit Host',
+                hostTitle: 'Mustafa Host',
+                detect: 'Auto Exploit + GoldHen <span class="range-highlight">5.05 &amp; 7.XX - 13.52</span>',
+                ready: 'Ready',
+                enter: 'ENTER HOST',
+                credit: 'Designed by <a href="#" class="credit-link">Mustafa</a>',
+                thanks: 'Special thanks to all scene developers',
+                onlyPS: 'This page is for PS4 only!',
+                detected: 'Detected PS4 Firmware: ',
+                unsupported: 'Unsupported Firmware: ',
+                requires: ' (Supported: 5.05 & 7.00-13.52)'
+            }
+        };
+
+        var currentLang = 'ar';
+        var msgs = document.getElementById('msgs');
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            var t = translations[lang];
+            document.getElementById('subtitle').textContent = t.subtitle;
+            document.getElementById('hostTitle').innerHTML = t.hostTitle;
+            document.getElementById('detectText').innerHTML = t.detect;
+            document.getElementById('enterText').textContent = t.enter;
+            document.getElementById('creditText').innerHTML = t.credit;
+            document.getElementById('thanksText').innerHTML = t.thanks;
+            if (!msgs.classList.contains('error')) {
+                msgs.innerHTML = t.ready;
+            }
+            document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            document.querySelector('.lang-btn[data-lang="' + lang + '"]').classList.add('active');
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+            try { localStorage.setItem('preferredLang', lang); } catch(e) {}
+        }
+
+        try {
+            var savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && translations[savedLang]) currentLang = savedLang;
+        } catch(e) {}
+
+        var uaFull = navigator.userAgent;
+        var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
+        var isPS4 = match !== null;
+        var fwVersion = isPS4 ? match[1] : "Unknown";
+        var fwNum = parseFloat(fwVersion);
+
+        document.addEventListener("DOMContentLoaded", function() {
+            switchLanguage(currentLang);
+            var t = translations[currentLang];
+
+            if (!isPS4) {
+                msgs.innerHTML = t.onlyPS;
+                msgs.className = 'status-text error';
+                return;
+            }
+
+            var supported = (Math.abs(fwNum - 5.05) < 0.001) || 
+                            (Math.abs(fwNum - 5.07) < 0.001) ||
+                            (fwNum >= 7.00 && fwNum <= 13.52);
+
+            if (supported) {
+                msgs.innerHTML = t.detected + fwVersion;
+            } else {
+                msgs.innerHTML = t.unsupported + fwVersion + t.requires;
+                msgs.className = 'status-text error';
+            }
+        });
+    </script>
+</body>
+</html>
