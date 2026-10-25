@@ -8,6 +8,7 @@ exploit10.js
 exploit7_9.js
 exploit5.js
 index.html
+cache.html
 payload.bin
 rpc_worker.js
 worker.js
